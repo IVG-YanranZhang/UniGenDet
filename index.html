@@ -126,7 +126,53 @@
   </button>
 
   <main id="main-content">
-
+    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
+      <i class="fas fa-flask"></i>
+      More Works
+      <i class="fas fa-chevron-down dropdown-arrow"></i>
+    </button>
+    <div class="more-works-dropdown" id="moreWorksDropdown">
+      <div class="dropdown-header">
+        <h4>More Works from Yanran Zhang</h4>
+        <button class="close-btn" onclick="toggleMoreWorks()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="works-list">
+        <a href="https://ivg-yanranzhang.github.io/MoRe4D/" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from a Single Image</h5>
+            <p>A joint framework for single-image 4D generation that tightly couples motion and geometry, overcoming the
+              inherent weaknesses of decoupled paradigms.</p>
+            <span class="work-venue">Arxiv</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://ivg-yanranzhang.github.io/D3QE/" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>D³QE: Learning Discrete Distribution Discrepancy-aware Quantization Error for Autoregressive-Generated
+              Image Detection</h5>
+            <p>D³QE is a novel framework for detecting autoregressive-generated images by exploiting the distinctive
+              patterns and frequency bias in the discrete latent codebook, achieving superior accuracy and
+              generalization.</p>
+            <span class="work-venue">ICCV 2025</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+      <div class="works-list">
+        <a href="https://ivg-yanranzhang.github.io/UniPre3D/" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>UniPre3D: Unified Pre-training of 3D Point Cloud Models with Cross-Modal Gaussian Splatting</h5>
+            <p>UniPre3D is the first unified pre-training method for 3D point clouds that effectively handles both
+              object- and scene-level data through cross-modal Gaussian splatting.</p>
+            <span class="work-venue">CVPR 2025</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+    </div>
+    </div>
     <!-- Hero Section -->
     <section class="hero tight-hero">
       <div class="hero-body">
