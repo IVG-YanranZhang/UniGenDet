@@ -101,6 +101,31 @@
       border-radius: 12px;
       box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     }
+
+    .figure-caption {
+      margin-top: 0.6rem;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      max-width: 980px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-title-note {
+      margin-top: -1rem;
+      margin-bottom: 2rem;
+      color: var(--text-secondary);
+      text-align: center;
+    }
+
+    .figure-card {
+      background: var(--background-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-md);
+    }
   </style>
 </head>
 
@@ -296,24 +321,26 @@
     <section class="section" id="method">
       <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered">Method Overview</h2>
+        <p class="section-title-note">Two key components shown side-by-side for quick scanning.</p>
 
-        <div class="columns is-centered">
-          <div class="column is-full-width has-text-centered">
-            <img class="img-frame" src="static/images/fig02_gduf_pipeline.png" alt="GDUF pipeline (Fig.2)"
-              style="width: 92%; margin-bottom: 0.75rem;" loading="lazy" />
-            <div class="figure-caption">
-              Fig. 2. Generation–Detection Unified Fine-tuning (GDUF): the high-level co-evolution loop.
+        <div class="columns is-centered is-variable is-5">
+          <div class="column is-6">
+            <div class="figure-card has-text-centered">
+              <img class="img-frame" src="static/images/fig02_gduf_pipeline.png" alt="GDUF pipeline (Fig.2)"
+                style="width: 100%;" loading="lazy" decoding="async" />
+              <div class="figure-caption">
+                Fig. 2. Generation-Detection Unified Fine-tuning (GDUF): the high-level co-evolution loop.
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="columns is-centered" style="margin-top: 2rem;">
-          <div class="column is-full-width has-text-centered">
-            <img class="img-frame" src="static/images/fig03_diga_pipeline.png" alt="DIGA pipeline (Fig.3)"
-              style="width: 92%; margin-bottom: 0.75rem;" loading="lazy" />
-            <div class="figure-caption">
-              Fig. 3. Detector-Informed Generative Alignment (DIGA): inject detector-aware signals for generative
-              alignment.
+          <div class="column is-6">
+            <div class="figure-card has-text-centered">
+              <img class="img-frame" src="static/images/fig03_diga_pipeline.png" alt="DIGA pipeline (Fig.3)"
+                style="width: 100%;" loading="lazy" decoding="async" />
+              <div class="figure-caption">
+                Fig. 3. Detector-Informed Generative Alignment (DIGA): detector-aware signals guide generation.
+              </div>
             </div>
           </div>
         </div>
@@ -322,12 +349,9 @@
           <div class="column is-four-fifths">
             <div class="content has-text-justified">
               <p>
-                At a high level, UniGenDet alternates between improving the generator and strengthening the detector
-                under a unified objective.
-                DIGA serves as the bridge: discriminative signals and artifact-sensitive cues are fed back to the
-                generator,
-                making the generated samples progressively more realistic while simultaneously creating harder examples
-                for detection.
+                UniGenDet co-evolves the generator and detector under a unified objective.
+                DIGA bridges them by feeding discriminative, artifact-sensitive cues back to the generator, improving
+                realism and producing harder negatives for detection.
               </p>
             </div>
           </div>
@@ -339,22 +363,32 @@
     <section class="section hero is-light" id="visualizations">
       <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered">Qualitative Visualizations</h2>
-        <p class="section-title-note">Replace the two panels below with your preferred supplementary visualizations.</p>
+        <p class="section-title-note">Generation comparison first, then detection comparison.</p>
 
         <div class="columns is-centered">
-          <div class="column is-6 has-text-centered">
-            <img class="img-frame" src="static/images/vis01_generation.png" alt="Supplementary visualization 1"
-              style="width: 100%; margin-bottom: 0.75rem;" loading="lazy" />
-            <div class="figure-caption">
-              Visualization A. Qualitative evidence for improved authenticity.
+          <div class="column is-10 has-text-centered">
+            <div class="figure-card">
+              <img class="img-frame" src="static/images/vis01_generation.png"
+                alt="Comparison of generation results: BAGEL vs UniGenDet" style="width: 100%; margin-bottom: 0.75rem;"
+                loading="lazy" decoding="async" />
+              <div class="figure-caption">
+                <b>Comparison of generation results.</b> Compared with BAGEL, UniGenDet produces more natural landscapes
+                with more coherent lighting, supporting detection-guided optimization.
+              </div>
             </div>
           </div>
+        </div>
 
-          <div class="column is-6 has-text-centered">
-            <img class="img-frame" src="static/images/vis02_detection.png" alt="Supplementary visualization 2"
-              style="width: 100%; margin-bottom: 0.75rem;" loading="lazy" />
-            <div class="figure-caption">
-              Visualization B. Complementary qualitative evidence (failure cases, generalization, or artifact analysis).
+        <div class="columns is-centered" style="margin-top: 1.5rem;">
+          <div class="column is-10 has-text-centered">
+            <div class="figure-card">
+              <img class="img-frame" src="static/images/vis02_detection.png"
+                alt="Comparison of detection results: UniGenDet vs pretrained BAGEL"
+                style="width: 100%; margin-bottom: 0.75rem;" loading="lazy" decoding="async" />
+              <div class="figure-caption">
+                <b>Comparison of detection results.</b> UniGenDet outperforms the pretrained BAGEL with more accurate
+                predictions and clearer artifact explanations for fake images (and stronger evidence for real ones).
+              </div>
             </div>
           </div>
         </div>
@@ -406,7 +440,7 @@
         </div>
 
         <!-- TODO: replace with your final BibTeX from the camera-ready -->
-        <pre id="bibtex-code"><code>@inproceedings{unigendet2026,
+        <pre id="bibtex-code"><code>@inproceedings{zhang2026unigendet,
   title     = {UniGenDet: A Unified Generative-Discriminative Framework for Co-Evolutionary Image Generation and Generated Image Detection},
   author    = {Zhang, Yanran and Zheng, Wenzhao and Li, Yifei and Yu, Bingyao and Zheng, Yu and Chen, Lei and Zhou, Jie and Lu, Jiwen},
   booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
