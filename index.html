@@ -2,120 +2,121 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- 优化 title，确保关键词在前 -->
-  <title>Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis | MoRe4D</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- 优化 description，包含关键词 -->
+  <title>UniGenDet: A Unified Generative-Discriminative Framework for Co-Evolutionary Image Generation and Generated
+    Image Detection</title>
+
   <meta name="description"
-    content="Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from a Single Image. A joint framework for single-image 4D generation coupling motion and geometry.">
-  <!-- 添加更多相关关键词 -->
+    content="UniGenDet is a unified generative-discriminative framework that co-evolves image generation and generated image detection, aligning generation with detector-aware signals for improved authenticity and robustness." />
   <meta name="keywords"
-    content="Joint 3D Geometry Reconstruction, Motion Generation, 4D Synthesis, Single Image to 4D, 4D Generation, MoRe4D, 3D Reconstruction, Diffusion Models, 4D Scene Generation">
+    content="generated image detection, image generation, generative-discriminative learning, co-evolution, alignment, robustness, computer vision" />
+  <meta name="author"
+    content="Yanran Zhang, Wenzhao Zheng, Yifei Li, Bingyao Yu, Yu Zheng, Lei Chen, Jie Zhou, Jiwen Lu" />
+  <meta name="robots" content="index, follow" />
 
-  <meta name="author" content="Yanran Zhang, Ziyi Wang, Wenzhao Zheng, Zheng Zhu, Jie Zhou, Jiwen Lu">
-
-  <meta property="og:type" content="article">
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
   <meta property="og:title"
-    content="Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from a Single Image">
+    content="UniGenDet: A Unified Generative-Discriminative Framework for Co-Evolutionary Image Generation and Generated Image Detection" />
   <meta property="og:description"
-    content="Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from a Single Image. Generating interactive, dynamic 4D scenes from a single static image with geometric consistency and plausible motion.">
-  <meta property="og:image" content="static/images/social_preview.png">
+    content="A unified framework that co-evolves image generation and generated image detection with detector-informed alignment." />
+  <!-- TODO: replace with a real social preview image when ready -->
+  <meta property="og:image" content="static/images/social_preview.png" />
+  <meta property="og:url" content="https://ivg-yanranzhang.github.io/UniGenDet/" />
 
-  <meta name="twitter:card" content="summary_large_image">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title"
-    content="Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from a Single Image">
+    content="UniGenDet: A Unified Generative-Discriminative Framework for Co-Evolutionary Image Generation and Generated Image Detection" />
   <meta name="twitter:description"
-    content="Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from a Single Image. Generating interactive, dynamic 4D scenes from a single static image with geometric consistency and plausible motion.">
-  <meta name="twitter:image" content="static/images/social_preview.png">
-  <!-- Fallback for browsers that don't support preload -->
-  <noscript>
-    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  </noscript>
+    content="A unified framework that co-evolves image generation and generated image detection with detector-informed alignment." />
+  <meta name="twitter:image" content="static/images/social_preview.png" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <!-- 添加这两行 Carousel 必需的样式文件 -->
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="static/css/bulma.min.css" />
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css" />
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css" />
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css" />
+  <link rel="stylesheet" href="static/css/index.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
 
-  <!-- 先加载 bulma-carousel，再加载 index.js -->
+  <!-- JS (keep order to satisfy static/js/index.js) -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
-  <!-- 添加结构化数据 (Schema.org) -->
+
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "headline": "Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from a Single Image",
-    "alternativeHeadline": "MoRe4D: Unified Framework for 4D Scene Generation",
-    "description": "A joint framework for single-image 4D generation that tightly couples motion and geometry, overcoming the inherent weaknesses of decoupled paradigms.",
+    "headline": "UniGenDet: A Unified Generative-Discriminative Framework for Co-Evolutionary Image Generation and Generated Image Detection",
     "author": [
-      {
-        "@type": "Person",
-        "name": "Yanran Zhang",
-        "affiliation": "Tsinghua University"
-      },
-      {
-        "@type": "Person",
-        "name": "Ziyi Wang",
-        "affiliation": "Tsinghua University"
-      },
-      {
-        "@type": "Person",
-        "name": "Wenzhao Zheng",
-        "affiliation": "Tsinghua University"
-      }
+      {"@type":"Person","name":"Yanran Zhang"},
+      {"@type":"Person","name":"Wenzhao Zheng"},
+      {"@type":"Person","name":"Yifei Li"},
+      {"@type":"Person","name":"Bingyao Yu"},
+      {"@type":"Person","name":"Yu Zheng"},
+      {"@type":"Person","name":"Lei Chen"},
+      {"@type":"Person","name":"Jie Zhou"},
+      {"@type":"Person","name":"Jiwen Lu"}
     ],
-    "datePublished": "2025-12-05",
-    "keywords": "Joint 3D Geometry Reconstruction, Motion Generation, 4D Synthesis, Single Image to 4D",
-    "url": "https://arxiv.org/abs/2512.05044",
-    "image": "https://arxiv.org/abs/2512.05044"
+    "url": "https://ivg-yanranzhang.github.io/UniGenDet/"
   }
   </script>
+
   <style>
-    /* Custom spacing for better readability */
     .content p {
-      line-height: 1.5;
+      line-height: 1.6;
       margin-bottom: 1em;
     }
 
-    .hero-body {
-      padding-bottom: 1rem;
+    .figure-caption {
+      margin-top: 0.6rem;
+      color: #64748b;
+      font-size: 0.95rem;
     }
 
-    .publication-video {
+    .tight-hero .hero-body {
+      padding-bottom: 1.5rem;
+    }
+
+    .section-title-note {
+      margin-top: -1rem;
       margin-bottom: 2rem;
+      color: #64748b;
+      text-align: center;
+    }
+
+    .img-frame {
+      border-radius: 12px;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     }
   </style>
 </head>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    if (typeof bulmaCarousel !== 'undefined') {
-      bulmaCarousel.attach('.carousel', {
-        slidesToScroll: 1,
-        slidesToShow: 1,
-        // : true,
-
-        navigation: true,
-        pagination: true
-      });
-    } else {
-      console.error('bulmaCarousel 未加载');
-    }
-  });
-</script>
 
 <body>
+  <!--
+    Figure naming plan (put these files under static/images/):
+    - fig01_teaser.png            (Paper Fig.1 teaser / overview)
+    - fig02_gduf_pipeline.png     (Paper Fig.2 GDUF overview)
+    - fig03_diga_pipeline.png     (Paper Fig.3 DIGA pipeline)
+    - vis01_key_visualization.png (Supplementary main visualization #1 you choose)
+    - vis02_key_visualization.png (Supplementary main visualization #2 you choose)
+    - tab01_detection.png         (Detection results table screenshot)
+    - tab02_generation.png        (Generation results table screenshot)
+    Optional:
+    - social_preview.png          (1200x630 social share preview)
+  -->
 
   <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top">
     <i class="fas fa-chevron-up"></i>
@@ -134,25 +135,37 @@
           <i class="fas fa-times"></i>
         </button>
       </div>
+
       <div class="works-list">
-        <a href="https://ivg-yanranzhang.github.io/D3QE/" class="work-item" target="_blank">
+        <a href="https://ivg-yanranzhang.github.io/MoRe4D/" class="work-item" target="_blank" rel="noopener">
+          <div class="work-info">
+            <h5>Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from a Single Image</h5>
+            <p>A joint framework for single-image 4D generation that tightly couples motion and geometry, overcoming the
+              inherent weaknesses of decoupled paradigms.</p>
+            <span class="work-venue">ArXiv 2025.12</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+
+      <div class="works-list">
+        <a href="https://ivg-yanranzhang.github.io/D3QE/" class="work-item" target="_blank" rel="noopener">
           <div class="work-info">
             <h5>D³QE: Learning Discrete Distribution Discrepancy-aware Quantization Error for Autoregressive-Generated
               Image Detection</h5>
-            <p>D³QE is a novel framework for detecting autoregressive-generated images by exploiting the distinctive
-              patterns and frequency bias in the discrete latent codebook, achieving superior accuracy and
-              generalization.</p>
+            <p>Detects autoregressive-generated images by exploiting distinctive patterns in discrete latent codebooks.
+            </p>
             <span class="work-venue">ICCV 2025</span>
           </div>
           <i class="fas fa-external-link-alt"></i>
         </a>
       </div>
+
       <div class="works-list">
-        <a href="https://ivg-yanranzhang.github.io/UniPre3D/" class="work-item" target="_blank">
+        <a href="https://ivg-yanranzhang.github.io/UniPre3D/" class="work-item" target="_blank" rel="noopener">
           <div class="work-info">
             <h5>UniPre3D: Unified Pre-training of 3D Point Cloud Models with Cross-Modal Gaussian Splatting</h5>
-            <p>UniPre3D is the first unified pre-training method for 3D point clouds that effectively handles both
-              object- and scene-level data through cross-modal Gaussian splatting.</p>
+            <p>Unified pre-training for point clouds across object- and scene-level data with cross-modal splatting.</p>
             <span class="work-venue">CVPR 2025</span>
           </div>
           <i class="fas fa-external-link-alt"></i>
@@ -162,496 +175,226 @@
   </div>
 
   <main id="main-content">
-    <!-- 在 main 开始处添加 -->
-    <nav class="breadcrumb" aria-label="breadcrumbs" style="padding: 1rem 0;">
-      <div class="container is-max-desktop">
-        <ul>
-          <li><a href="https://ivg-yanranzhang.github.io/MoRe4D/">Home</a></li>
-          <li><a href="#">Research</a></li>
-          <li class="is-active"><a href="#" aria-current="page">Joint 3D Geometry Reconstruction and Motion
-              Generation</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- 添加对应的结构化数据 -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Research",
-        "item": "https://yourusername.github.io"
-      },{
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Joint 3D Geometry Reconstruction and Motion Generation",
-        "item": "https://yourusername.github.io/MoRe4D-web/"
-      }]
-    }
-    </script>
-
-    <section class="hero">
+    <section class="hero tight-hero">
       <div class="hero-body">
         <div class="container is-max-desktop">
           <div class="columns is-centered">
             <div class="column has-text-centered">
               <h1 class="title is-1 publication-title">
-                Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from a Single Image
+                UniGenDet: A Unified Generative-Discriminative Framework for Co-Evolutionary Image Generation and
+                Generated Image Detection
               </h1>
 
               <div class="is-size-5 publication-authors">
-                <span class="author-block">
-                  <a href="https://github.com/Zhangyr2022/" target="_blank">Yanran Zhang</a><sup>*1</sup>,
-                </span>
-                <span class="author-block">
-                  <a href="https://wangzy22.github.io/" target="_blank">Ziyi Wang</a><sup>*,1</sup>,
-                </span>
-                <span class="author-block">
-                  <a href="https://wzzheng.net/#" target="_blank">Wenzhao Zheng</a><sup>†,1</sup>,
-                </span>
-                <span class="author-block">
-                  <a href="http://www.zhengzhu.net/" target="_blank">Zheng Zhu</a><sup>2</sup>,
-                </span>
-                <span class="author-block">
-                  <a href="https://scholar.google.com/citations?user=6a79aPwAAAAJ&hl=en" target="_blank">Jie
-                    Zhou</a><sup>1</sup>,
-                </span>
-                <span class="author-block">
-                  <a href="https://ivg.au.tsinghua.edu.cn/Jiwen_Lu/" target="_blank">Jiwen Lu</a><sup>1</sup>
-                </span>
+                <span class="author-block">Yanran Zhang</span>,
+                <span class="author-block">Wenzhao Zheng</span><sup>†</sup>,
+                <span class="author-block">Yifei Li</span>,
+                <span class="author-block">Bingyao Yu</span>,
+                <span class="author-block">Yu Zheng</span>,
+                <span class="author-block">Lei Chen</span>,
+                <span class="author-block">Jie Zhou</span><sup>*</sup>,
+                <span class="author-block">Jiwen Lu</span>
               </div>
 
               <div class="is-size-5 publication-authors">
-                <span class="author-block"><sup>1</sup>Department of Automation, Tsinghua University, China</span>
-                &nbsp; &nbsp; &nbsp;
-                <span class="author-block"><sup>2</sup>GigaAI</span>
-                <span class="eql-cntrb"><small><br><sup>*</sup>Equal Contribution, <sup>†</sup>Project
-                    Leader</small></span>
+                <span class="author-block">Department of Automation, Tsinghua University, China</span>
+                <span class="eql-cntrb"><small><br /><sup>*</sup> Corresponding author &nbsp;&nbsp; <sup>†</sup> Project
+                    leader</small></span>
               </div>
 
-              <div class="column has-text-centered">
-                <div class="publication-links">
-                  <span class="link-block">
-                    <a href="static/pdfs/paper.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                      <span>Paper</span>
-                    </a>
-                  </span>
-                  <span class="link-block">
-                    <a href="https://github.com/Zhangyr2022/MoRe4D" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon"><i class="fab fa-github"></i></span>
-                      <span>Code</span>
-                    </a>
-                  </span>
-                  <span class="link-block">
-                    <a href="https://arxiv.org/abs/2512.05044" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon"><i class="ai ai-arxiv"></i></span>
-                      <span>arXiv</span>
-                    </a>
-                  </span>
-                  <span class="link-block">
-                    <a href="https://github.com/Zhangyr2022/MoRe4D"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon"><i class="fas fa-database"></i></span>
-                      <span>TrajScene-60K (Coming Soon)</span>
-                    </a>
-                  </span>
-                </div>
+              <div class="publication-links">
+                <span class="link-block">
+                  <!-- TODO: place your final PDF in static/pdfs/ and update href -->
+                  <a href="static/pdfs/paper.pdf" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper (Coming Soon)</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://github.com/Zhangyr2022/UniGenDet" target="_blank" rel="noopener"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <!-- TODO: add arXiv link when available -->
+                  <a href="#" class="external-link button is-normal is-rounded is-dark" onclick="return false;">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span>
+                    <span>arXiv (Coming Soon)</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="#BibTeX" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-quote-right"></i></span>
+                    <span>BibTeX</span>
+                  </a>
+                </span>
               </div>
+
+              <p class="publication-venue">CVPR 2026</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Teaser -->
     <section class="hero teaser">
       <div class="container is-max-desktop">
         <div class="hero-body has-text-centered">
-          <img src="static/images/teaser.png"
-            alt="Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from Single Image"
-            style="width: 85%; border-radius: 10px; margin-bottom: 20px;">
-          <h2 class="subtitle has-text-justified">
-            <b>MoRe4D</b> generates interactive, dynamic 4D scenes from a single static image.
-            Unlike previous paradigms that decouple generation and reconstruction (leading to geometric
-            inconsistencies),
-            we tightly couple geometric modeling and motion generation, achieving consistent 4D motion and geometry.
-          </h2>
+          <img class="img-frame" src="static/images/fig01_teaser.png" alt="UniGenDet teaser" style="width: 92%;" />
+          <div class="figure-caption">
+            Fig. 1. UniGenDet bridges generation and detection in a unified, co-evolutionary framework.
+          </div>
+
+          <div class="content has-text-justified" style="margin-top: 1.5rem;">
+            <p>
+              UniGenDet unifies image generation and generated-image detection into a single co-evolving framework.
+              Instead of treating generation and detection as isolated problems, we connect them with detector-informed
+              signals
+              so that the generator aligns toward authenticity while the detector becomes more robust to evolving
+              generative artifacts.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- Highlights -->
     <section class="section hero is-light">
       <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
+        <div class="columns is-centered">
           <div class="column is-four-fifths">
-            <h2 class="title is-3">Abstract</h2>
+            <h2 class="title is-3 has-text-centered">Key Idea</h2>
+            <p class="section-title-note">Focus on visual evidence; keep metrics brief.</p>
             <div class="content has-text-justified">
-              <p>
-                Generating interactive, dynamic 4D scenes from a single static image remains a core challenge. Most
-                existing
-                methods decouple geometry from motion (either generate-then-reconstruct or reconstruct-then-generate),
-                causing spatiotemporal inconsistencies and poor generalization.
-              </p>
-              <p>
-                To overcome these limitations, we extend the reconstruct-then-generate framework to jointly couple
-                <b>Mo</b>tion
-                generation with geometric <b>Re</b>construction for 4D Synthesis (<b>MoRe4D</b>). We first introduce
-                <b>TrajScene-60K</b>,
-                a large-scale dataset of 60,000 video samples with dense point trajectories, addressing the scarcity of
-                high-quality
-                4D scene data. Based on this, we propose a diffusion-based <b>4D Scene Trajectory Generator
-                  (4D-STraG)</b> to jointly
-                generate geometrically consistent and motion-plausible 4D point trajectories.
-                To leverage single-view priors, we design a depth-guided motion normalization strategy and a
-                motion-aware module
-                in 4D-STraG for effective geometry and dynamics integration. We then propose a <b>4D View Synthesis
-                  Module (4D-ViSM)</b>
-                to render videos with arbitrary camera trajectories from 4D point track representations. Experiments
-                show that MoRe4D
-                generates high-quality 4D scenes with multi-view consistency and rich dynamic details from a single
-                image.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column is-full-width">
-            <h2 class="title is-3 has-text-centered">Methodology: Unified 4D Synthesis</h2>
-            <div class="content has-text-centered">
-              <img src="static/images/pipeline.png"
-                alt="Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from Single Image"
-                style="width: 90%; margin-bottom: 20px;">
-            </div>
-            <div class="content has-text-justified">
-              <p>
-                Our framework consists of two core components designed to ensure both geometric stability and dynamic
-                realism:
-              </p>
               <ul>
-                <li>
-                  <b>4D Scene Trajectory Generator (4D-STraG):</b> A joint diffusion model that simultaneously
-                  reconstructs and generates spatiotemporal point trajectories. It utilizes a <b>Depth-Guided Motion
-                    Normalization</b> to ensure scale invariance and a <b>Motion Perception Module (MPM)</b> to inject
-                  rich motion priors from the input image.
-                </li>
-                <li>
-                  <b>4D View Synthesis Module (4D-ViSM):</b> Leveraging the dense 4D point cloud representation, this
-                  module synthesizes high-fidelity novel view videos, filling in dis-occluded regions coherently using
-                  generative priors.
-                </li>
+                <li><b>Unified co-evolution:</b> generation and detection are jointly optimized rather than separately
+                  tuned.</li>
+                <li><b>Detector-informed alignment:</b> use discriminative cues to guide generative learning toward more
+                  authentic outputs.</li>
+                <li><b>Robust detection:</b> co-evolution exposes the detector to harder, evolving negatives to improve
+                  generalization.</li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="section hero is-light" id="dataset">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column is-full-width">
-            <h2 class="title is-3 has-text-centered">TrajScene-60K Dataset</h2>
-            <div class="content has-text-centered">
-              <img src="static/images/dataset.png"
-                alt="TrajScene-60K Curation (Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from Single Image)"
-                style="width: 85%; margin-bottom: 20px;">
-            </div>
-            <div class="content has-text-justified">
-              <p>
-                To address the data scarcity for 4D generation, we present <b>TrajScene-60K</b>, a large-scale dataset
-                containing:
-              </p>
-              <ul>
-                <li><b>60,000 High-Quality Samples:</b> Curated from WebVid-10M using VLM-based filtering (CogVLM2 &
-                  DeepSeek-V3) to ensure meaningful, countable, and self-initiated motion.</li>
-                <li><b>Dense Annotations:</b> Includes dense 4D point trajectories, per-frame depth maps, and occlusion
-                  masks extracted via DELTA tracking and Gaussian Splatting rendering.</li>
-                <li><b>Rich Semantics:</b> Paired with high-quality captions describing both scene content and dynamic
-                  behavior.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-
-    <!-- New Gallery Section -->
-    <section class="section">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Generated Samples</h2>
-
-        <!-- Column Headers -->
-        <div class="columns is-centered has-text-centered is-hidden-mobile" style="margin-bottom: 1rem;">
-          <div class="column is-4">
-            <h4 class="title is-5">Input</h4>
-          </div>
-          <div class="column is-4">
-            <h4 class="title is-5">4D Point Tracking Generated From 4D-STraG</h4>
-          </div>
-          <div class="column is-4">
-            <h4 class="title is-5">Multi-View Videos Generated From 4D-ViSM</h4>
-          </div>
-        </div>
-
-        <div class="columns is-vcentered is-centered"
-          style="border-bottom: 1px solid #eee; padding-bottom: 2rem; margin-bottom: 2rem;">
-          <!-- Input Column -->
-          <div class="column is-4 has-text-centered">
-            <div class="content is-small has-text-left box" style="background-color: #f5f5f5; padding: 0.15rem;">
-              <p><b>Prompt:</b> A brown bear walks across rocky terrain.</p>
-            </div>
-            <figure class="image is-inline-block" style="width: 70%; margin-bottom: 0.5rem;">
-              <!-- TODO: Check extension (jpg/png) -->
-              <img src="static/demo_videos/bear/Input.png"
-                alt="bear Input (Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from Single Image)"
-                style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-            </figure>
-
-          </div>
-
-          <!-- 4D-STraG Column -->
-          <div class="column is-4 has-text-centered">
-            <video controls muted playsinline width="80%"
-              style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-              <source src="static/demo_videos/bear/4D-STraG_output/bear_render.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <!-- 4D-ViSM Column (Carousel) -->
-          <div class="column is-4 has-text-centered">
-            <div id="bear-carousel" class="carousel results-carousel">
-              <div class="item">
-                <video controls muted playsinline width="100%" style="border-radius: 8px;">
-                  <source src="static/demo_videos/bear/4D-ViSM_output/1.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="item">
-                <video controls muted playsinline width="100%" style="border-radius: 8px;">
-                  <source src="static/demo_videos/bear/4D-ViSM_output/2.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="item">
-                <video controls muted playsinline width="100%" style="border-radius: 8px;">
-                  <source src="static/demo_videos/bear/4D-ViSM_output/3.mp4" type="video/mp4">
-                </video>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Row 1: Camel -->
-        <div class="columns is-vcentered is-centered"
-          style="border-bottom: 1px solid #eee; padding-bottom: 2rem; margin-bottom: 2rem;">
-          <!-- Input Column -->
-          <div class="column is-4 has-text-centered">
-            <div class="content is-small has-text-left box" style="background-color: #f5f5f5; padding: 0.15rem;">
-              <p><b>Prompt:</b> A camel walks along a path in a sunny zoo enclosure.</p>
-            </div>
-            <figure class="image is-inline-block" style="width: 80%; margin-bottom: 0.5rem;">
-              <!-- TODO: Check extension (jpg/png) -->
-              <img src="static/demo_videos/camel/Input.png"
-                alt="Camel Input (Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from Single Image)"
-                style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-            </figure>
-
-          </div>
-
-          <!-- 4D-STraG Column -->
-          <div class="column is-4 has-text-centered">
-            <video controls muted playsinline width="80%"
-              style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-              <source src="static/demo_videos/camel/4D-STraG_output/camel_render.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <!-- 4D-ViSM Column (Carousel) -->
-          <div class="column is-4 has-text-centered">
-            <div id="camel-carousel" class="carousel results-carousel">
-              <div class="item">
-                <video controls muted playsinline width="100%" style="border-radius: 8px;">
-                  <source src="static/demo_videos/camel/4D-ViSM_output/1.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="item">
-                <video controls muted playsinline width="100%" style="border-radius: 8px;">
-                  <source src="static/demo_videos/camel/4D-ViSM_output/2.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="item">
-                <video controls muted playsinline width="100%" style="border-radius: 8px;">
-                  <source src="static/demo_videos/camel/4D-ViSM_output/3.mp4" type="video/mp4">
-                </video>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Row 2: Cat -->
-        <!-- <div class="columns is-vcentered is-centered"
-          style="border-bottom: 1px solid #eee; padding-bottom: 2rem; margin-bottom: 2rem;">
-          <div class="column is-4 has-text-centered">
-            <figure class="image is-inline-block" style="width: 100%; margin-bottom: 0.5rem;">
-              <img src="static/demo_videos/cat/Input.png" alt="Cat Input"
-                style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-            </figure>
-            <div class="content is-small has-text-left box" style="background-color: #f5f5f5; padding: 0.15rem;">
-              <p><b>Prompt:</b> Three cats with teacups sway rhythmically from side to side.</p>
-            </div>
-          </div>
-
-          <div class="column is-4 has-text-centered">
-            <video  controls muted  playsinline width="100%"
-              style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-              <source src="static/demo_videos/cat/4D-STraG_output/cat_render.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column is-4 has-text-centered">
-            <div id="cat-carousel" class="carousel results-carousel">
-              <div class="item">
-                <video  controls muted  playsinline width="100%" style="border-radius: 8px;">
-                  <source src="static/demo_videos/cat/4D-ViSM_output/1.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="item">
-                <video  controls muted  playsinline width="100%" style="border-radius: 8px;">
-                  <source src="static/demo_videos/cat/4D-ViSM_output/2.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="item">
-                <video  controls muted  playsinline width="100%" style="border-radius: 8px;">
-                  <source src="static/demo_videos/cat/4D-ViSM_output/3.mp4" type="video/mp4">
-                </video>
-              </div>
-            </div>
-          </div>
-        </div>-->
-
-        <!-- Row 3: Rhino -->
-        <div class="columns is-vcentered is-centered" style="margin-bottom: 1rem;">
-          <!-- Input Column -->
-          <div class="column is-4 has-text-centered">
-            <div class="content is-small has-text-left box" style="background-color: #f5f5f5; padding: 0.15rem;">
-              <p><b>Prompt:</b> A grey rhino strolls peacefully through the dappled sunlight.</p>
-            </div>
-            <figure class="image is-inline-block" style="width: 70%; margin-bottom: 0.5rem;">
-              <img src="static/demo_videos/rhino/Input.png"
-                alt="Rhino Input (Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from Single Image)"
-                style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-            </figure>
-          </div>
-
-          <!-- 4D-STraG Column -->
-          <div class="column is-4 has-text-centered">
-            <video controls muted playsinline width="80%"
-              style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-              <source src="static/demo_videos/rhino/4D-STraG_output/rhino_render.mp4" type="video/mp4">
-            </video>
-          </div>
-
-          <!-- 4D-ViSM Column (Carousel) -->
-          <div class="column is-4 has-text-centered">
-            <div id="rhino-carousel" class="carousel results-carousel">
-              <div class="item">
-                <video controls muted playsinline width="100%" style="border-radius: 8px;">
-                  <source src="static/demo_videos/rhino/4D-ViSM_output/2.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="item">
-                <video controls muted playsinline width="100%" style="border-radius: 8px;">
-                  <source src="static/demo_videos/rhino/4D-ViSM_output/1.mp4" type="video/mp4">
-                </video>
-              </div>
-              <div class="item">
-                <video controls muted playsinline width="100%" style="border-radius: 8px;">
-                  <source src="static/demo_videos/rhino/4D-ViSM_output/4.mp4" type="video/mp4">
-                </video>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
-        <div class="columns is-centered">
-          <div class="column is-full-width">
-            <h4 class="title is-4">Multi-View & Trajectory Generation</h4>
-            <div class="content has-text-centered">
-              <!-- <img src="static/images/qualitative_1.png" alt="Multi-view Generation"
-                style="width: 85%; margin-bottom: 10px;"> -->
-              <img src="static/images/qualitative_2.png"
-                alt="Multi-view Generation (Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from Single Image)"
-                style="width: 85%; margin-bottom: 10px;">
-            </div>
-            <p class="has-text-centered is-size-6">
-              Our model generates consistent 4D point clouds (Top) and renders high-quality videos under arbitrary
-              camera trajectories (Bottom).
-            </p>
-          </div>
-        </div>
-
-        <div class="columns is-centered">
-          <div class="column is-full-width">
-            <h4 class="title is-4">Comparison with State-of-the-Art Single-Image-to-4D methods</h4>
-            <div class="content has-text-centered">
-              <img src="static/images/qualitative_3.png"
-                alt="Comparison with SOTA (Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from Single Image)"
-                style="width: 85%; margin-bottom: 10px;">
-            </div>
-            <p class="has-text-centered is-size-6">
-              Visual comparison with 4Real, DimensionX, Gen3C, and Free4D. MoRe4D produces more diverse motion and
-              preserves structural consistency better than decoupled approaches.
-            </p>
-          </div>
-        </div>
-
-        <section class="section">
-          <div class="container is-max-desktop">
-            <h2 class="title is-3 has-text-centered">Quantitative Analysis</h2>
-
-            <div class="content has-text-justified">
-              <p>
-                We perform a comprehensive quantitative evaluation using VBench.
-                Following the protocol in Free4D, comparisons are structured into three groups based on
-                model availability and trajectory complexity.
-                Our method consistently achieves superior performance, particularly in dynamic degree and visual
-                quality metrics.
+              <p style="margin-top: 1rem;">
+                This page highlights the methodology and qualitative visualizations. Detailed numeric settings and
+                extended ablations
+                are left to the paper.
               </p>
             </div>
-            <div class="column is-full-width">
-              <div class="content has-text-centered">
-                <img src="static/images/quantitative.png"
-                  alt="Comparison with SOTA (Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from Single Image)"
-                  style="width: 85%; margin-bottom: 10px;">
-              </div>
-            </div>
-
           </div>
-        </section>
-        <br>
-
-
-
+        </div>
       </div>
     </section>
 
+    <!-- Method -->
+    <section class="section" id="method">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Method Overview</h2>
+
+        <div class="columns is-centered">
+          <div class="column is-full-width has-text-centered">
+            <img class="img-frame" src="static/images/fig02_gduf_pipeline.png" alt="GDUF pipeline (Fig.2)"
+              style="width: 92%; margin-bottom: 0.75rem;" loading="lazy" />
+            <div class="figure-caption">
+              Fig. 2. Generation–Detection Unified Fine-tuning (GDUF): the high-level co-evolution loop.
+            </div>
+          </div>
+        </div>
+
+        <div class="columns is-centered" style="margin-top: 2rem;">
+          <div class="column is-full-width has-text-centered">
+            <img class="img-frame" src="static/images/fig03_diga_pipeline.png" alt="DIGA pipeline (Fig.3)"
+              style="width: 92%; margin-bottom: 0.75rem;" loading="lazy" />
+            <div class="figure-caption">
+              Fig. 3. Detector-Informed Generative Alignment (DIGA): inject detector-aware signals for generative
+              alignment.
+            </div>
+          </div>
+        </div>
+
+        <div class="columns is-centered" style="margin-top: 1.25rem;">
+          <div class="column is-four-fifths">
+            <div class="content has-text-justified">
+              <p>
+                At a high level, UniGenDet alternates between improving the generator and strengthening the detector
+                under a unified objective.
+                DIGA serves as the bridge: discriminative signals and artifact-sensitive cues are fed back to the
+                generator,
+                making the generated samples progressively more realistic while simultaneously creating harder examples
+                for detection.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visualizations -->
+    <section class="section hero is-light" id="visualizations">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Qualitative Visualizations</h2>
+        <p class="section-title-note">Replace the two panels below with your preferred supplementary visualizations.</p>
+
+        <div class="columns is-centered">
+          <div class="column is-6 has-text-centered">
+            <img class="img-frame" src="static/images/vis01_generation.png" alt="Supplementary visualization 1"
+              style="width: 100%; margin-bottom: 0.75rem;" loading="lazy" />
+            <div class="figure-caption">
+              Visualization A. Qualitative evidence for improved authenticity.
+            </div>
+          </div>
+
+          <div class="column is-6 has-text-centered">
+            <img class="img-frame" src="static/images/vis02_detection.png" alt="Supplementary visualization 2"
+              style="width: 100%; margin-bottom: 0.75rem;" loading="lazy" />
+            <div class="figure-caption">
+              Visualization B. Complementary qualitative evidence (failure cases, generalization, or artifact analysis).
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quantitative -->
+    <section class="section" id="quantitative">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Quantitative Summary (Brief)</h2>
+        <p class="section-title-note">Two table screenshots: detection and generation.</p>
+
+        <div class="columns is-centered">
+          <div class="column is-6 has-text-centered">
+            <img class="img-frame" src="static/images/tab01_detection.png" alt="Detection results table"
+              style="width: 100%; margin-bottom: 0.75rem;" loading="lazy" />
+            <div class="figure-caption">Table A. Detection performance summary (screenshot from paper).</div>
+          </div>
+
+          <div class="column is-6 has-text-centered">
+            <img class="img-frame" src="static/images/tab02_generation.png" alt="Generation results table"
+              style="width: 100%; margin-bottom: 0.75rem;" loading="lazy" />
+            <div class="figure-caption">Table B. Generation quality summary (screenshot from paper).</div>
+          </div>
+        </div>
+
+        <div class="columns is-centered" style="margin-top: 1rem;">
+          <div class="column is-four-fifths">
+            <div class="content has-text-justified">
+              <p>
+                We refer readers to the paper for full protocols, datasets, and ablations. Here we only provide a
+                compact snapshot to keep the page visual-first.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BibTeX -->
     <section class="section" id="BibTeX">
       <div class="container is-max-desktop content">
         <div class="bibtex-header">
@@ -661,12 +404,13 @@
             <span class="copy-text">Copy</span>
           </button>
         </div>
-        <pre id="bibtex-code"><code>@article{zhang2025more4d,
-  title={Joint 3D Geometry Reconstruction and Motion Generation for 4D Synthesis from a Single Image},
-  author={Zhang, Yanran and Wang, Ziyi and Zheng, Wenzhao and Zhu, Zheng and Zhou, Jie and Lu, Jiwen},
-  archivePrefix={arXiv},
-  primaryClass={cs.CV},
-  url={https://arxiv.org/abs/2512.05044}, 
+
+        <!-- TODO: replace with your final BibTeX from the camera-ready -->
+        <pre id="bibtex-code"><code>@inproceedings{unigendet2026,
+  title     = {UniGenDet: A Unified Generative-Discriminative Framework for Co-Evolutionary Image Generation and Generated Image Detection},
+  author    = {Zhang, Yanran and Zheng, Wenzhao and Li, Yifei and Yu, Bingyao and Zheng, Yu and Chen, Lei and Zhou, Jie and Lu, Jiwen},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2026}
 }</code></pre>
       </div>
     </section>
@@ -677,16 +421,17 @@
           <div class="column is-8">
             <div class="content has-text-centered">
               <p>
-                This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"
-                  target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-                Template adapted from <a href="https://nerfies.github.io" target="_blank">Nerfies</a>.
+                This website is licensed under a
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">
+                  Creative Commons Attribution-ShareAlike 4.0 International License
+                </a>.
+                Template adapted from <a href="https://nerfies.github.io" target="_blank" rel="noopener">Nerfies</a>.
               </p>
             </div>
           </div>
         </div>
       </div>
     </footer>
-
   </main>
 </body>
 
