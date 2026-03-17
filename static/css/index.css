@@ -4,9 +4,15 @@
   --primary-hover: #1d4ed8;
   --secondary-color: #64748b;
   --accent-color: #0ea5e9;
-  --text-primary: #1e293b;
+  /* --text-primary: #1e293b;
   --text-secondary: #64748b;
-  --text-light: #94a3b8;
+  --text-light: #94a3b8; */
+  --text-primary: #0f172a;
+  /* 原来偏灰蓝，改更接近黑 */
+  --text-secondary: #334155;
+  /* 原来 #64748b 太浅，改深一档 */
+  --text-light: #64748b;
+  /* 让“light”也别太淡（可选） */
   --background-primary: #ffffff;
   --background-secondary: #f8fafc;
   --background-accent: #f1f5f9;
